@@ -21,11 +21,6 @@ public class group {
     public void setUp() throws Exception {
         wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    }
-    
-    @Test
-    public void group() throws InterruptedException {
-        wd.get("http://www.sebuilder.com/");
         wd.get("http://localhost/addressbook/");
         Thread.sleep(3000);
         wd.findElement(By.name("user")).click();
@@ -35,7 +30,12 @@ public class group {
         wd.findElement(By.name("pass")).clear();
         wd.findElement(By.name("pass")).sendKeys("secret");
         wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
-        wd.findElement(By.xpath("//*[@id='nav']/ul/li[3]/a")).click();
+
+    }
+    
+    @Test
+    public void testGroupCreation() throws InterruptedException {
+        wd.findElement(By.xpath("//div[@id='nav']/ul/li[3]/a")).click();
         wd.findElement(By.name("new")).click();
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
