@@ -1,4 +1,4 @@
-package us.va.yauheni;
+package us.va.yauheni.model;
 
 public class NewContactForm {
     private final String firstname;
