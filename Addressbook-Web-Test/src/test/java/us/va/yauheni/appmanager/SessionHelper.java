@@ -15,6 +15,8 @@ public class SessionHelper extends HelperBase{
         click(By.xpath("//form[@id='LoginForm']/input[3]"));
     }
 
-    public void logOut() { click(By.linkText("Logout")); }
+    public void logOut() throws InterruptedException {
+        Thread.sleep(500);
+        click(By.linkText("Logout")); }
 
 }

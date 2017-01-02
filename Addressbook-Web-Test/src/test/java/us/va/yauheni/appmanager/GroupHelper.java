@@ -14,6 +14,8 @@ public class GroupHelper extends HelperBase {
         click(By.name("submit"));
     }
 
+    public void selectGroup() { click(By.xpath("//*[@id='content']/form/span[1]/input"));}
+
     public void fillGroupForm(GroupData groupData) {
         fillTheField(By.name("group_name"), groupData.getNamegroup());
         fillTheField(By.name("group_header"), groupData.getHeader());
@@ -22,5 +24,13 @@ public class GroupHelper extends HelperBase {
 
     public void initGroupCreation() {
         click(By.name("new"));
+    }
+
+    public void initGroupModification() {
+        click(By.cssSelector("input[name=edit]"));
+    }
+
+    public void confirmGroupModification() {
+        click(By.cssSelector("input[name=update]"));
     }
 }

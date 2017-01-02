@@ -5,14 +5,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class NavigationHelper extends HelperBase{
 
-    private FirefoxDriver wd;
-
     public NavigationHelper(FirefoxDriver wd) {
         super(wd);
-    }
-
-    public void returnToGroupPage() {
-        click(By.linkText("CreateNewGroup page"));
     }
 
     public void goToGroupPage() throws InterruptedException {
@@ -20,7 +14,7 @@ public class NavigationHelper extends HelperBase{
         click(By.cssSelector(".admin>a"));
         while (boo) {
             try {
-                wd.findElement(By.cssSelector("#content>h1"));
+                wd.findElement(By.xpath("//*[@id='content']/form/span[1]/input"));
                 boo = false;
             } catch (Exception ex) {
                 Thread.sleep(1000);
