@@ -7,7 +7,7 @@ import us.va.yauheni.appmanager.ApplicationManager;
 
 public class TestBase {
 
-    protected final ApplicationManager App = new ApplicationManager(BrowserType.IE);
+    protected final ApplicationManager App = new ApplicationManager(BrowserType.CHROME);
 
     @BeforeMethod
     public void setUp() throws Exception {
