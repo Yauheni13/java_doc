@@ -15,8 +15,11 @@ public class NavigationHelper extends HelperBase{
         click(By.cssSelector(".admin>a"));
         while (boo) {
             try {
-                wd.findElement(By.xpath("//*[@id='content']/form/span[1]/input"));
-                boo = false;
+                if(isElementPresent(By.name("new")) &&
+                        isElementPresent(By.name("edit")) &&
+                        isElementPresent(By.name("delete"))) {
+                    boo = false;
+                }
             } catch (Exception ex) {
                 Thread.sleep(1000);
                 click(By.cssSelector(".admin>a"));
@@ -24,6 +27,12 @@ public class NavigationHelper extends HelperBase{
 
         }
 
+    }
+
+    private boolean isElementPresent(By locator) {
+        if(wd.findElement(locator).isDisplayed()) {
+            return true;
+        }else return false;
     }
 
     public void goToHomePage() {

@@ -8,4 +8,5 @@ repositories{
 
 dependencies {
     compile 'org.testng:testng:6.10'
+    compile 'org.mariadb.jdbc:mariadb-java-client:1.5.5'
 }

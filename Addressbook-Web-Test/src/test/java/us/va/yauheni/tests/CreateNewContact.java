@@ -1,14 +1,14 @@
 package us.va.yauheni.tests;
 
 import org.testng.annotations.Test;
-import us.va.yauheni.model.NewContactForm;
+import us.va.yauheni.model.Contact;
 
 public class CreateNewContact extends TestBase {
 
     @Test
     public void newContact () {
-        App.getNavigationHelper().goToNewContactPage();
-        App.getContactHelper().fillNewContactForm(new NewContactForm("First",
+        app.getNavigationHelper().goToNewContactPage();
+        app.getContactHelper().fillNewContactForm(new Contact("First",
                 "Middle",
                 "Last",
                 "Nick",
@@ -22,9 +22,10 @@ public class CreateNewContact extends TestBase {
                 "May",
                 "text1",
                 "1978",
-                "secondary"));
-        App.getContactHelper().confirmCreateNewContact();
-        App.getNavigationHelper().goToHomePage();
+                "secondary",
+                "notes"));
+        app.getContactHelper().confirmCreateNewContact();
+        app.getNavigationHelper().goToHomePage();
     }
 
 

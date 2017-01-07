@@ -7,17 +7,17 @@ import us.va.yauheni.appmanager.ApplicationManager;
 
 public class TestBase {
 
-    protected final ApplicationManager App = new ApplicationManager(BrowserType.CHROME);
+    protected final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
 
     @BeforeMethod
     public void setUp() throws Exception {
-        App.init();
+        app.init();
 
     }
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
-        App.stop();
+        app.stop();
     }
 
 }

@@ -1,23 +1,18 @@
 package us.va.yauheni;
 
+import us.va.yauheni.utils.GenerateString;
+
 import java.nio.channels.FileChannel;
 
-/**
- * Created by lenovo on 23.12.2016.
- */
 public class runing123{
 
-    public static void main(String[] args){
-    Child123 child123 = new Child123();
-    Parent123 parent123 = new Parent123();
-    System.out.println(child123.str);
-    System.out.println(child123.a);
-    System.out.println(parent123.a);
-    System.out.println("class Grand  " + new grandChild().a);
-    System.out.println("class Grand  " + new grandChild().str);
-    System.out.println("class Grand  " + new grandChild().age);
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(GenerateString.randomint(5,5));
+        }
     }
 }
+
 class grandChild extends Child123{
     float age;
     grandChild(){
