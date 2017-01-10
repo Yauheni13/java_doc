@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import us.va.yauheni.model.GroupData;
 import us.va.yauheni.utils.GenerateString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GroupHelper extends HelperBase {
@@ -19,7 +20,9 @@ public class GroupHelper extends HelperBase {
         click(By.name("submit"));
     }
 
-    public void selectGroup() { click(By.xpath("//*[@id='content']/form/span[1]/input"));}
+    public void selectGroup(int index) {
+        wd.findElements(By.name("selected[]")).get(index).click();
+    }
 
     public void fillGroupForm(GroupData groupData) {
         fillTheField(By.name("group_name"), groupData.getNamegroup());
@@ -81,4 +84,37 @@ public class GroupHelper extends HelperBase {
     private void confirmGroupDeletion() {
         wd.findElement(By.cssSelector("input[name=delete]")).click();
     }
+
+
+    public int getCountGroup() throws InterruptedException {
+        return wd.findElements(By.name("selected[]")).size();
+    }
+
+/*    public List<GroupData> getGroupList() {
+        List<GroupData> groupList = new ArrayList<GroupData>();
+        List<WebElement> elements = wd.findElements(By.name("selected[]"));
+        for (int i=0; i<elements.size(); i++){
+            wd.findElements(By.name("selected[]")).get(i).click();
+            click(By.cssSelector("input[name=edit]"));
+            GroupData group = new GroupData(wd.findElement(By.name("group_name")).getAttribute("value"),
+                    wd.findElement(By.name("group_header")).getAttribute("value"),
+                    wd.findElement(By.name("group_footer")).getAttribute("value"));
+            groupList.add(group);
+            wd.findElement(By.cssSelector(".admin>a")).click();
+        }
+        return groupList;
+    }*/
+
+public List<GroupData> getGroupList() {
+    List<GroupData> groupList = new ArrayList<GroupData>();
+    List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
+    for (WebElement element : elements){
+        GroupData group = new GroupData(new Integer(element.findElement(By.tagName("input")).getAttribute("value")),
+                element.getText(),
+                null,
+                null);
+        groupList.add(group);
+        }
+    return groupList;
+}
 }
