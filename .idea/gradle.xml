@@ -3,22 +3,33 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/sandbox_java" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/sandbox_java" />
-          </set>
-        </option>
-        <option name="useAutoImport" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
         <option name="createEmptyContentRootDirectories" value="true" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/Addressbook-Web-Test" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/Addressbook-Web-Test" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/PremierInc" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../Java_tools/gradle-3.2.1-all/gradle-3.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/PremierInc" />
+          </set>
+        </option>
+        <option name="useAutoImport" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sandbox_java" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sandbox_java" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />
